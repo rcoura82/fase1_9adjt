@@ -1,0 +1,104 @@
+{
+    "info": {
+      "name": "Fase19adjt API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Criar Usuário",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao.silva@email.com\",\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\",\n  \"endereco\": \"Rua das Flores, 123\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/usuario",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["usuario"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Atualizar Usuário",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.silva@email.com\",\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\",\n  \"endereco\": \"Rua das Palmeiras, 456\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/usuario/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["usuario", "1"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Trocar Senha",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"senhaAtual\": \"123456\",\n  \"novaSenha\": \"654321\",\n  \"confirmacaoSenha\": \"654321\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/usuario/troca-senha",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["usuario", "troca-senha"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Validar Login",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"usuario\": \"joaosilva\",\n  \"senha\": \"123456\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/usuario/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["usuario", "login"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
